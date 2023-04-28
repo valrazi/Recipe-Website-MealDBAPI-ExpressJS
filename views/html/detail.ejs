@@ -1,0 +1,27 @@
+<%-include('partials/head') %>
+<body>
+    <header>
+        <%-include('partials/header')%>
+    </header>
+    
+    <div class="d-flex flex-column justify-content-start p-3">
+   
+        <img src="<%=menu.strMealThumb%>" alt="" style="width: 250px;">
+        <h1 class="fs-2"><%=menu.strMeal%></h1>
+        <h2>Ingredients</h2>
+        <% utils.forEach(function(util){%>
+            <% if (util.ingredient != null){ %>
+                <p><%=util.measure%> <%=util.ingredient%></p>
+            <%}%>
+            <% })%>
+        <h2>Instruction</h2>
+        <p><%=menu.strInstructions%></p>
+
+        <h3>Youtube Video:</h3>
+        <iframe width="560" height="315" src="<%=ytLink%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <footer>
+      <%-include('partials/footer')%>
+    </footer>
+</body>
+</html>
